@@ -1,0 +1,409 @@
+/* ===== General Styling ===== */
+/* ========== Navbar ========= */
+/* ======= Hero Section =======*/
+/* ========== Slider ==========*/
+/* ========= Section ==========*/
+/* ========= Footer ===========*/
+
+/* ============================== General Styling ============================== */
+
+:root{
+    --ff-primary: 'Nunito', sans-serif;
+    --ff-secondary: 'PT Sans', sans-serif;
+    --clr-primary-900: #000000;
+    --clr-primary-700: #252617;
+    --clr-primary-600: #34401A;
+    --clr-secondary-500: #64732F;
+    --clr-secondary-400: #B4BF5E;
+    --clr-secondary-200: #CAD959;
+    --clr-secondary-100: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    font-size: 18px;
+}
+
+body{
+    background-color: var(--clr-primary-600);
+}
+
+a{
+    color: var(--clr-secondary-200);
+}
+
+a:hover{
+    color: var(--clr-secondary-100);
+}
+
+h2{
+    color: var(--clr-secondary-200);
+    font-family: var(--ff-primary);
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-secondary-500);
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-secondary-200);
+    border-radius: 2rem;
+}
+
+/* =================================== Navbar =================================== */
+
+
+nav{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-secondary-200);
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+    margin-left: .7rem;
+}
+
+#main-logo{
+    width: 3rem;
+    height: 3rem;
+    margin-right: .8rem;
+}
+
+.title{
+    font-family: var(--ff-primary);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    padding: 1.3rem 1rem;
+    font-family: var(--ff-secondary);
+    text-align: center;
+}
+
+li{
+    display: inline-block;
+    width: 9rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+li:hover{
+    color: var(--clr-primary-900);
+    transition: all .5s ease;
+}
+
+/* ================================== Hero Section ================================= */
+
+header{
+    max-width: 100%;
+    min-height: 100vh;
+    background-image: url(./assets/images/hero-img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+strong{
+    color: var(--clr-secondary-200);
+    font-family: var(--ff-primary);
+    font-size: 4.5rem;
+}
+
+em{
+    color: var(--clr-secondary-200);
+    text-emphasis: none;
+}
+
+h1{
+    width: 30rem;
+    padding: 3rem 1.5rem;
+    font-family: var(--ff-secondary);
+    color: var(--clr-primary-900);
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
+header > * {
+    position: relative;
+    z-index: 2;
+}
+
+header::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background: hsla(126, 96%, 22%, 0.424);
+}
+
+button{
+    margin-left: 9rem;
+    padding: .5rem 2.5rem;
+    border-radius: 2.2rem;
+    font-family: var(--ff-secondary);
+    background-color: var(--clr-primary-600);
+    color: var(--clr-secondary-200);
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+    outline: 2px solid var(--clr-primary-900);
+    border: 2px solid var(--clr-primary-900);
+    transition: all 100ms ease-in-out;
+}
+
+button:hover{
+    outline-offset: -6px;
+    color: var(--clr-secondary-200);
+    font-weight: 600;
+}
+
+/* ================================== Slider =================================== */
+
+.slider{
+    width: 1300px;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 3s;
+}
+
+.slide img{
+    width: 1300px;
+    height: 600px;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 4px solid var(--clr-secondary-200);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 2rem;
+}
+
+.manual-btn:hover{
+    background: var(--clr-secondary-200);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 1300px;
+    justify-content: center;
+    margin-top: 500px;
+}
+
+.navigation-auto div{
+    border: 4px solid var(--clr-secondary-200);
+    padding: 10px;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 37px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: var(--clr-secondary-200);
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: var(--clr-secondary-200);
+}
+     
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: var(--clr-secondary-200);
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: var(--clr-secondary-200);
+}
+
+/* ================================== Section ================================== */
+
+section{
+    width: 100%;
+    height: 50vw;
+    display: grid;
+    padding: 1rem 1.3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.txt-box{
+    background-color: var(--clr-primary-700);
+}
+
+.img-box1{
+    background-image: url(./assets/images/wood-12.jpg);
+    background-position: center;
+    width: 652px;
+    height: 330px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.img-box2{
+    background-image: url(./assets/images/wood-12.jpg);
+    background-position: center;
+    width: 652px;
+    height: 330px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.img-box1::before,
+.img-box2::before{
+    content: url(./assets/icons/icon-view.svg);
+    position: absolute;
+    width: 652px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(126, 96%, 22%, 0.424);
+    transform: scale(0);
+    transition: all .1s ease;
+}
+
+.img-box1:hover::before,
+.img-box2:hover::before
+{
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.img-box2{
+    background-image: url(./assets/images/wood-3.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.txt-box{
+    width: 652px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tree{
+    width: 2.1rem;
+}
+
+.txt-box p{
+    font-family: var(--ff-secondary);
+    font-size: 1.2rem;
+}
+
+/* ================================= Footer ================================= */
+
+footer{
+    width: 100%;
+    height: 50vh;
+    background: var(--clr-primary-700);
+    margin-top: 2rem;
+    display: flex;
+}
+
+.attribution{
+    width: 50%;
+    font-family: var(--ff-secondary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 6rem;
+
+}
+
+.map{
+    width: 50%;
+    text-align: center;
+    padding-top: .6rem;
+}
+
+.iframe{
+    width: 500px;
+}
